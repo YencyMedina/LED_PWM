@@ -12,6 +12,7 @@ white = [255,255,255]
 blue = [0,0,255]
 green = [0,255,0]
 purple = [255,0,255]
+orange = [255, 64, 0]
 
 color1 = [defcolor[0],defcolor[1],defcolor[2]]
 np.fill(color1)
@@ -89,7 +90,7 @@ Parameters: fgcolor(list), bgcolor(list), speed(float)
 
 Return value: Prints the background and foreground color values as they update
 '''
-def chase(fgcolor = green, bgcolor = purple, speed = 0.001):
+def chase(fgcolor = green, bgcolor = purple, speed = 0.005):
     for j in range(100):
         np.show()
         for i in range(30):
@@ -111,11 +112,14 @@ while True:
     fade_in(purple)
     fade_out(purple)
     fade_in(green)
-    sparkle(purple, green, 0.01, 5)
+    sparkle(purple, green, 0.05, 5)
     fade_out(green)
     fade_in(purple)
     fade_out(purple)
     fade_in(green)
     chase()
     fade_out(green)
+    fade_in(orange)
+    chase(orange, purple)
+    fade_out(purple)
     fade_in(purple)
